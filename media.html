@@ -1,8 +1,37 @@
-<p>Digite 3 números para calcular a média.</p>
-<input type="number" id="a">
-<input type="number" id="b">
-<input type="number" id="c">
-
-<button onclick="obterMedia()">Calcular média</button>
-
-<div id="resultado"></div>
+<!DOCTYPE html>
+<body>
+	<div id="calculator">
+		<div class="container">
+			<form action="#"  >
+				<h1>Digite 3 números para calcular a média:</h1>
+				<p>Média</p>
+				<div v-bind:class="{ error: !isAlunoAprovado } ">
+					<p >{{media}}</p>
+				</div>
+                <label >Nota 1</label>
+                <input type="number" name="nota1" class="currency" v-model.number="nota1" />
+                <label >Nota 2</label>
+                <input type="number" name="nota2" class="currency" v-model.number="nota2" />
+                <label >Nota 3</label>
+				<input type="number" name="nota3" class="currency" v-model.number="nota3" />
+			</form>
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+		var calculator = new Vue({
+			el: '#calculator',
+			data: {
+                nota1:null,
+                nota2:null,
+                nota3:null,
+			},
+			computed: {
+				media(){
+					return (this.nota1 + this.nota2 + this.nota3) / 3;
+				 }
+            },
+		});
+	</script>
+</body>
+</html>
