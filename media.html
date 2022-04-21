@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device=width, initial-scale1.0">
+	<title>JavaScript</title>
+</head>
 <body>
 	<div id="calculator">
 		<div class="container">
@@ -14,21 +21,24 @@
                 <input type="number" name="nota2" class="currency" v-model.number="nota2" />
                 <label >Nota 3</label>
 				<input type="number" name="nota3" class="currency" v-model.number="nota3" />
+				<label >Nota 4</label>
+				<input type="number" name="nota4" class="currency" v-model.number="nota4" />
 			</form>
 		</div>
 	</div>
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script>
-		var calculator = new Vue({
+		let calculator = new Vue({
 			el: '#calculator',
 			data: {
                 nota1:null,
                 nota2:null,
                 nota3:null,
+				nota4:null,
 			},
 			computed: {
 				media(){
-					return (this.nota1 + this.nota2 + this.nota3) / 3;
+					return (this.nota1 + this.nota2 + this.nota3 + this.nota4) / 4;
 				 }
             },
 		});
